@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #FFD700; /* Yellow background */
+}
+
+.main-container {
+    min-height: 100vh;
+}
+
+h1 {
+    color: #000;
+    font-weight: bold;
+}
+
+.btn-dark {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-dark:hover {
+    transform: scale(1.05);
+} 
