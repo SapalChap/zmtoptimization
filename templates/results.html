@@ -4,7 +4,64 @@
 <div class="container-fluid main-container d-flex align-items-center justify-content-center">
     <div class="text-center">
         <h1 class="display-4 mb-4">Your Optimized Results</h1>
-        <!-- Add results content here -->
+
+        <!-- Optimization Status -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2>Optimization Status</h2>
+            </div>
+            <div class="card-body">
+                <p>Status: {{ results.status }}</p>
+                <p>Subtotal: ${{ "%.2f"|format(results.total_cost) }}</p>
+                <p>Sales Tax (11%): ${{ "%.2f"|format(results.total_cost * 0.11) }}</p>
+                <p>Total After Tax: ${{ "%.2f"|format(results.total_cost * 1.11) }}</p>
+            </div>
+        </div>
+
+        <!-- Selected Foods -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2>Your Optimal Food Choices</h2>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Food Item</th>
+                                <th>Serving Size</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for food in results.selected_foods %}
+                            <tr>
+                                <td>{{ food.food }}</td>
+                                <td>{{ food.serving_size }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nutritional Summary -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2>Nutritional Summary</h2>
+            </div>
+            <div class="card-body">
+                <p>Total Protein: {{ "%.1f"|format(results.total_protein) }}g</p>
+                <p>Total Carbs: {{ "%.1f"|format(results.total_carbs) }}g</p>
+                <p>Total Fats: {{ "%.1f"|format(results.total_fats) }}g</p>
+                <p>Total Micronutrients: {{ "%.1f"|format(results.total_micronutrients) }}mg</p>
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <div class="mt-4">
+            <a href="{{ url_for('constraints') }}" class="btn btn-dark">Try Different Inputs</a>
+        </div>
     </div>
 </div>
 {% endblock %} 
