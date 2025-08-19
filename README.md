@@ -6,7 +6,7 @@
 
 ##  Demo & Context
 
-Built by SapalChap, this was inspired by a visit to Zhang Liang Malatang in Mountain View and combines interests in mathematics, fitness, and data science. It uses linear programming to maximize nutritional value per dollar spent. The Flask-powered web app is hosted on PythonAnywhere and sees around ~100 daily visits.
+Built by SapalChap, this was inspired by a visit to Zhang Liang Malatang in Mountain View and combines interests in mathematics, fitness, and data science. It uses linear programming to maximize nutritional value per dollar spent. The Flask-powered web app is hosted on PythonAnywhere and sees around ~200 monthly visits.
 
 ---
 
